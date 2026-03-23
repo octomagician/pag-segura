@@ -44,6 +44,11 @@
                 {{ __('Already registered?') }}
             </a>
 
+            <div class="mt-4">
+                <div class="g-recaptcha" data-sitekey="{{ env('RECAPTCHA_SITE_KEY') }}"></div>
+                <x-input-error :messages="$errors->get('g-recaptcha-response')" class="mt-2" />
+            </div>
+
             <x-primary-button class="ms-4">
                 {{ __('Register') }}
             </x-primary-button>
