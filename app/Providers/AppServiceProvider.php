@@ -21,10 +21,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        if (env('APP_ENV') !== 'local') {
-            URL::forceScheme('https');
-        }
-        
+        /*if (env('APP_ENV') !== 'local') {URL::forceScheme('https');}*/
+
         Password::defaults(function () {
             return Password::min(8) // Mínimo 8 caracteres
                 ->letters()         // Debe contener al menos una letra
